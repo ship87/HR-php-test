@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Vendor;
+use App\Common\Order\Models\Vendor;
 
 class VendorsTableSeeder extends Seeder
 {

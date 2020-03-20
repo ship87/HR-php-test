@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,6 +124,14 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+    'yandex_weather_api' => [
+        'test_mode' => env('APP_YANDEX_WEATHER_API_TEST_MODE'),
+        'key' => env('APP_YANDEX_WEATHER_API_KEY'),
+        'url' => env('APP_YANDEX_WEATHER_API_URL'),
+        'url_test' => env('APP_YANDEX_WEATHER_API_URL_TEST'),
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +184,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \App\Common\Weather\Providers\WeatherServiceProvider::class,
 
     ],
 

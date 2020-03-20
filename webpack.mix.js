@@ -11,5 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.sourceMaps()
+    .scripts([
+        'node_modules/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js',
+    ], 'public/js/vendor.js')
+    .js(['resources/assets/js/app.js'],    'public/js').version()
+    .styles(['resources/assets/css/style.css'], 'public/css/style.css').version()
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .babel(['resources/js/*.js'], 'public/js/script.js');

@@ -15,7 +15,19 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('order-form', require('./components/order-form'));
+
+import VeeValidate from 'vee-validate';
+window.validateErrorClass = 'error';
+Vue.use(VeeValidate, {
+    classes: true,
+    classNames: {
+        valid: '',
+        invalid: window.validateErrorClass
+    },
+    events: 'change',
+});
+
 
 const app = new Vue({
     el: '#app'

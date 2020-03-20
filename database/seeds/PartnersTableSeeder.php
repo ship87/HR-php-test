@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Partner;
+use App\Common\Order\Models\Partner;
 
 class PartnersTableSeeder extends Seeder
 {
